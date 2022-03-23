@@ -1,5 +1,6 @@
 package com.productserver.persistence;
 
+import com.productserver.domain.Member;
 import com.productserver.domain.Product;
 import com.productserver.domain.ProductInfo;
 import com.productserver.domain.ProductResponseDTO;
@@ -27,6 +28,11 @@ public interface ProductInfoRepository extends CrudRepository<ProductInfo, Long>
     @Modifying
     @Query("update ProductInfo p set p.fee = ?1, p.updateDate = current_time where p.productId = ?2")
     int updateFee(Double fee,  Long productId);
+
+    @Transactional
+    @Modifying
+    @Query("update ProductInfo p set p.editorId = ?1 where p.productId = ?2")
+    int updateEditor(Member editorId, Long productId);
 
 
 

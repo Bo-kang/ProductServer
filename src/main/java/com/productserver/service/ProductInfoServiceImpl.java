@@ -34,4 +34,14 @@ public class ProductInfoServiceImpl implements ProductInfoService {
         return (List<ProductResponseDTO>)productInfoRepo.findProductListWithStatusAndLanguage(status, language);
     }
 
+    @Override
+    public void updateProductInfo(ProductInfo productInfo) {
+        if(productInfo.getProductStatus() != null)
+            productInfoRepo.updateStatus(productInfo.getProductStatus(), productInfo.getProductId());
+        if(productInfo.getProductOwner() != null)
+            productInfoRepo.updateEditor(productInfo.getEditorId(), productInfo.getProductId());
+        if(!productInfo.getFee().isNaN() && productInfo.getFee() != null)
+            productInfoRepo.updateFee(productInfo.getFee(), productInfo.getProductId());
+    }
+
 }

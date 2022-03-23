@@ -12,4 +12,6 @@ public interface ProductInfoService {
     ProductInfo registerProductInfo(ProductInfo productInfo);
 
     List<ProductResponseDTO> getProductList(ProductInfo.Status status, Product.Language language);
+
+    void updateProductInfo(ProductInfo productInfo);
 }
