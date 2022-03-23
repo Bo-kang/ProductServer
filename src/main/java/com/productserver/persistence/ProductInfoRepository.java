@@ -17,7 +17,7 @@ public interface ProductInfoRepository extends CrudRepository<ProductInfo, Long>
     @Query(" select a.productId as productInfoId, b.seq as productId, a.productOwner.userId as writerId, a.createDate as createDate, b.title as title, a.price as price, a.fee as fee, b.language as language " +
             "from ProductInfo a, Product b " +
             "where a.productId = b.productInfo.productId and a.productStatus = ?1 and b.language = ?2")
-    Iterable<ProductListResponseDTO> findProductListWithWaitingStatus(ProductInfo.Status status,Product.Language language);
+    Iterable<ProductListResponseDTO> findProductListWithStatusAndLanguage(ProductInfo.Status status,Product.Language language);
 
     @Transactional
     @Modifying
