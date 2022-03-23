@@ -14,6 +14,10 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public Member registerMember(Member member){
+        Member findMember = memberRepo.findById(member.getUserId()).orElse(null);
+        if(findMember != null){
+            return null;
+        }
         return memberRepo.save(member);
     }
 
@@ -23,7 +27,7 @@ public class MemberServiceImpl implements MemberService {
         if(findMember.isEmpty()) return null;
 
         if(findMember.get().getUserId() == null) return null;
-        if(findMember.get().getUserPassword().compareTo(member.getUserPassword()) != 0) return null;
+        if(!findMember.get().getUserPassword().equals(member.getUserPassword())) return null;
 
         return findMember.get();
     }

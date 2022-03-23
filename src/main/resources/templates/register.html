@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset= utf-8">
+    <title>Member Register View</title>
+</head>
+<body>
+<form th:action = "member" method = "post">
+    <table th:align = "center" border = "1" th:cellpadding="0" th:cellspacing="0">
+        <tr>
+            <td bgcolor = "orange" th:text="ID"></td>
+            <td><input name = "userId" type = "text" size = "10"></td>
+        </tr>
+        <tr>
+            <td bgcolor = "orange" th:text="Password"></td>
+            <td><input name = "userPassword" type = "password" size = "10"></td>
+        </tr>
+        <tr>
+            <td bgcolor = "orange" th:text="UserType"></td>
+            <td>
+                <select name="userType" >
+                    <option value="CUSTOMER" selected>일반고객</option>
+                    <option value="WRITER">창작자</option>
+                    <option value="EDITOR">에디터</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan = "2" >  <input type = "submit" value = "회원가입"> </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

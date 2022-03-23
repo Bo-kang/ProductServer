@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Product List</title>
+</head>
+<body th:align="center">
+
+<div th:with="language = 'language', status = 'status'">
+    <form th:action = "productList" th:method="get">
+        <select th:name="${language}">
+            <option th:value="KOR">한국어</option>
+            <option th:value="ENG">영어</option>
+            <option th:value="CHN">중국어</option>
+        </select>
+
+        <select th:name="${status}">
+            <option th:value="SELLING"> 판매중</option>
+            <option th:value="WAITING_CONSIDER"> 검토 대기 중</option>
+            <option th:value="UNDER_CONSIDER"> 검토 중</option>
+        </select>
+
+        <input type="submit" value="reload">
+    </form>
+</div>
+
+<table boarder="1" cellpadding="0" cellspacing="0" width="700" th:align="center">
+    <tr>
+        <th bgcolor="orange" width="100">number</th>
+        <th bgcolor="orange" width="100">title</th>
+        <th bgcolor="orange" width="100">writer</th>
+        <th bgcolor="orange" width="100">created date</th>
+    </tr>
+    <tr th:each="product : ${productList}">
+        <td th:text="${product.productInfoId}">
+        <td><a th:href="@{/product}" th:text="${product.title}"> </a></td>
+        <td th:text="${product.writerId}">
+        <td th:text="${#dates.format(product.createDate, 'yyyy-MM-dd')}">
+    </tr>
+</table>
+
+<a th:href="@{/insertProduct}">새글 등록</a>
+<hr>
+<a th:href="@{/logout}"> LOG OUT </a>
+
+</body>
+</html>
