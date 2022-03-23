@@ -21,12 +21,12 @@ public interface ProductInfoRepository extends CrudRepository<ProductInfo, Long>
 
     @Transactional
     @Modifying
-    @Query("update ProductInfo p set p.productStatus = ?1, p.updateDate = current_time where p.productId = ?3")
+    @Query("update ProductInfo p set p.productStatus = ?1, p.updateDate = current_time where p.productId = ?2")
     int updateStatus(ProductInfo.Status productStatus,  Long productId);
 
     @Transactional
     @Modifying
-    @Query("update ProductInfo p set p.fee = ?1, p.updateDate = current_time where p.productId = ?3")
+    @Query("update ProductInfo p set p.fee = ?1, p.updateDate = current_time where p.productId = ?2")
     int updateFee(Double fee,  Long productId);
 
 
