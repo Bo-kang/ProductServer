@@ -1,15 +1,10 @@
 package com.productserver.domain;
 
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-import org.springframework.transaction.annotation.Transactional;
-
 import java.util.Date;
 
 
-public interface ProductListResponseDTO {
+public interface ProductResponseDTO {
 
     Long getProductInfoId();
     Long getProductId();
@@ -19,5 +14,5 @@ public interface ProductListResponseDTO {
     Double getPrice();
     Double getFee();
     Product.Language getLanguage();
-
+    String getContents();
 }

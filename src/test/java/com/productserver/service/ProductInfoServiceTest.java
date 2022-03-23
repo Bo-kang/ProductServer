@@ -3,17 +3,18 @@ package com.productserver.service;
 import com.productserver.domain.Member;
 import com.productserver.domain.Product;
 import com.productserver.domain.ProductInfo;
-import com.productserver.domain.ProductListResponseDTO;
-import lombok.RequiredArgsConstructor;
-import org.junit.jupiter.api.BeforeAll;
+import com.productserver.domain.ProductResponseDTO;
+import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
 @SpringBootTest
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ProductInfoServiceTest {
 
     @Autowired
@@ -97,9 +98,9 @@ public class ProductInfoServiceTest {
     @Test
     @Order(4)
     public void getProductInfoListTest1(){
-        List<ProductListResponseDTO> productListDTO = productInfoService.getProductList(ProductInfo.Status.WAITING, Product.Language.KOR);
+        List<ProductResponseDTO> productListDTO = productInfoService.getProductList(ProductInfo.Status.WAITING, Product.Language.KOR);
 
-        for(ProductListResponseDTO iter : productListDTO){
+        for(ProductResponseDTO iter : productListDTO){
             System.out.println(iter.getTitle() + " " + iter.getWriterId() + " " + iter.getPrice());
         }
 

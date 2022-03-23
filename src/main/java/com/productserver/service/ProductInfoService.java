@@ -2,7 +2,7 @@ package com.productserver.service;
 
 import com.productserver.domain.Product;
 import com.productserver.domain.ProductInfo;
-import com.productserver.domain.ProductListResponseDTO;
+import com.productserver.domain.ProductResponseDTO;
 
 import java.util.List;
 
@@ -11,5 +11,5 @@ public interface ProductInfoService {
 
     ProductInfo registerProductInfo(ProductInfo productInfo);
 
-    List<ProductListResponseDTO> getProductList(ProductInfo.Status status, Product.Language language);
+    List<ProductResponseDTO> getProductList(ProductInfo.Status status, Product.Language language);
 }
