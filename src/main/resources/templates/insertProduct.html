@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>board View</title>
+</head>
+<body>
+
+<form th:action = "productInfo" th:method="post">
+<table border=1 th:cellpadding=0 th:cellspacing=0>
+    <tr>
+        <td bgcolor=orange> Title</td>
+        <td align=left> <input name = "title" type = "text"> </td>
+    </tr>
+    <tr>
+        <td bgcolor=orange> Owner</td>
+        <td align=left th:text="${session['member'].userId}"></td>
+    </tr>
+
+    <tr>
+        <td bgcolor=orange> Contents</td>
+        <td align=left><textarea name=contents cols=40 rows=10 ></textarea></td>
+    </tr>
+    <tr>
+        <td bgcolor=orange>Price</td>
+        <td align=left> <input name = "price" type = "number"> </td>
+    </tr>
+
+
+</table>
+    <input type="submit" value = "등록">
+</form>
+
+<hr>
+
+
+<a th:href="@{/productList}">글 목록</a>
+</body>
+</html>

@@ -43,7 +43,7 @@ public class ProductInfo {
     private Date updateDate;
 
     @ManyToOne @JoinColumn(name = "editor_id")
-    private Member editorId;
+    private Member editor;
 
     @Column(nullable = false)
     private Double price;

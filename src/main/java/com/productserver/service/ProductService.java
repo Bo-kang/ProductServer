@@ -6,4 +6,5 @@ import com.productserver.domain.ProductResponseDTO;
 public interface ProductService {
     Product registerProduct(Product product);
     ProductResponseDTO getProduct(Long productId);
+
 }

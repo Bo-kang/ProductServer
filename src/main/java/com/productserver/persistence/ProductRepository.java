@@ -18,7 +18,7 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
     @Query("update Product p set p.title = ?1, p.contents = ?2, p.language = ?3 where p.productInfo.productId = ?4 and p.seq = ?5")
     int updateTitleAndContentsAndLanguage(String title, String contents,Product.Language language ,Long productId, Long seq);
 
-    @Query("select a.productId as productInfoId, b.seq as productId, a.productOwner.userId as writerId, a.createDate as createDate, b.title as title, a.price as price, a.fee as fee, b.language as language , b.contents as contents " +
+    @Query("select a.productId as productInfoId, b.seq as productId, a.productOwner.userId as writerId, a.createDate as createDate, b.title as title, a.price as price, a.fee as fee, b.language as language , b.contents as contents, a.productStatus as status " +
             "from ProductInfo a , Product b  " +
             "where b.seq = ?1 and b.productInfo.productId = a.productId")
     Optional<ProductResponseDTO> findProductDtoByProductSeq(Long seq);

@@ -1,11 +1,13 @@
 package com.productserver.service;
 
+import com.productserver.domain.Member;
 import com.productserver.domain.Product;
 import com.productserver.domain.ProductInfo;
 import com.productserver.domain.ProductResponseDTO;
 import com.productserver.persistence.ProductInfoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -39,9 +41,15 @@ public class ProductInfoServiceImpl implements ProductInfoService {
         if(productInfo.getProductStatus() != null)
             productInfoRepo.updateStatus(productInfo.getProductStatus(), productInfo.getProductId());
         if(productInfo.getProductOwner() != null)
-            productInfoRepo.updateEditor(productInfo.getEditorId(), productInfo.getProductId());
-        if(!productInfo.getFee().isNaN() && productInfo.getFee() != null)
+            productInfoRepo.updateEditor(productInfo.getEditor(), productInfo.getProductId());
+        if( productInfo.getFee() != null && !productInfo.getFee().isNaN())
             productInfoRepo.updateFee(productInfo.getFee(), productInfo.getProductId());
+    }
+
+    @Override
+    @Transactional
+    public List<ProductInfo> getProductListByWriter(Member member) {
+        return productInfoRepo.findAllByProductOwner(member);
     }
 
 }

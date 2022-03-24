@@ -18,20 +18,33 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @Controller
+@SessionAttributes( names = {"member"})
 public class ProductController {
     final private ProductInfoService productInfoService;
     final private ProductService productService;
-    final private MemberService memberService;
+
+    @GetMapping("/insertProduct")
+    public void insertProductView(){
+
+    }
+
+    @GetMapping("/myProductList")
+    public String myProductView(@ModelAttribute("member") Member member, Model model){
+        List<ProductInfo> ret = productInfoService.getProductListByWriter(member);
+        System.out.println(ret);
+        model.addAttribute("productInfoList" , ret);
+
+        return "myProductList";
+    }
+
     @PostMapping("/productInfo")
-    public ProductInfo registerProductInfo(@RequestBody ProductRequestDTO productDTO, @ModelAttribute("member") Member member){
+    public String registerProductInfo(ProductRequestDTO productDTO, @ModelAttribute("member") Member member){
 
         System.out.println(productDTO);
 
         ProductInfo productInfo = new ProductInfo();
-        productInfo.setProductId(productDTO.getProductId());
         productInfo.setProductOwner(member);
         productInfo.setPrice(productDTO.getPrice());
-        productInfo.setFee(productDTO.getFee());
 
         Product product = new Product();
         product.setTitle(productDTO.getTitle());
@@ -39,45 +52,44 @@ public class ProductController {
         product.setContents(productDTO.getContents());
         product.setProductInfo(productInfo);
 
-        System.out.println(productInfo);
-        System.out.println(product);
-
         productInfo.getProductList().add(product);
-        return productInfoService.registerProductInfo(productInfo);
 
+        System.out.println(productInfo);
+        productInfoService.registerProductInfo(productInfo);
 
-    }
-
-    @PostMapping("/product")
-    public Product registerProduct(@ModelAttribute("member") Member member, @RequestBody ProductInfo productInfo, @RequestBody Product product){
-        product.setProductInfo(productInfo);
-        Product ret = productService.registerProduct(product);
-
-        return ret;
-    }
-
-    @PutMapping("/productInfo")
-    public void updateProductInfo(@ModelAttribute("member") Member member, @RequestBody ProductInfo productInfo){
-        productInfo.setEditorId(member);
-        productInfoService.updateProductInfo(productInfo);
+        return "redirect:productList";
     }
 
     @GetMapping("/productList")
-    public String getProductList(Product.Language language, ProductInfo.Status status, Model model){
+    public String getProductList( Product.Language language, ProductInfo.Status status, Model model){
         if(language == null) language = Product.Language.KOR;
         if(status == null) status = ProductInfo.Status.SELLING;
+        if(model.getAttribute("language") != null) language = (Product.Language)model.getAttribute("language");
+        if(model.getAttribute("status") != null) status = (ProductInfo.Status)model.getAttribute("status");
 
         List<ProductResponseDTO> ret = productInfoService.getProductList(status, language);
+
         model.addAttribute("productList", ret);
+        model.addAttribute("language", language);
+        model.addAttribute("status", status);
 
         return "productList";
     }
 
 
     @GetMapping("/product")
-    public ProductResponseDTO getProduct(@RequestParam Long productId){
+    public String getProduct(@RequestParam Long productId , Model model){
         ProductResponseDTO ret = productService.getProduct(productId);
-
-        return ret;
+        model.addAttribute("product" , ret);
+        return "product";
     }
+
+    @PatchMapping("/productInfo")
+    public String patchProductInfo(@RequestParam Long productId, @RequestBody ProductInfo productInfo, Model model){
+        productInfoService.updateProductInfo(productInfo);
+
+        return "myProductList";
+    }
+
+
 }

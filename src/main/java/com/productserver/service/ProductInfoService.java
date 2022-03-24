@@ -1,5 +1,6 @@
 package com.productserver.service;
 
+import com.productserver.domain.Member;
 import com.productserver.domain.Product;
 import com.productserver.domain.ProductInfo;
 import com.productserver.domain.ProductResponseDTO;
@@ -14,4 +15,6 @@ public interface ProductInfoService {
     List<ProductResponseDTO> getProductList(ProductInfo.Status status, Product.Language language);
 
     void updateProductInfo(ProductInfo productInfo);
+
+    List<ProductInfo> getProductListByWriter(Member member);
 }

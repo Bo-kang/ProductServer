@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>board View</title>
+</head>
+<body>
+
+<input name="seq" type="hidden" th:value="${product.productInfoId}">
+<table border=1 th:cellpadding=0 th:cellspacing=0>
+    <tr>
+        <td bgcolor=orange> Title</td>
+        <td align=left th:text="${product.title}"></td>
+    </tr>
+    <tr>
+        <td bgcolor=orange> Owner</td>
+        <td align=left th:text="${product.writerId}"></td>
+    </tr>
+    <tr>
+        <td bgcolor=orange>Status</td>
+        <td align=left th:text="${product.status}"></td>
+    </tr>
+    <tr>
+        <td bgcolor=orange> Contents</td>
+        <td align=left><textarea disabled name=content cols=40 rows=10 th:text="${product.contents}"></textarea></td>
+    </tr>
+    <tr>
+        <td bgcolor=orange>Price</td>
+        <td align=left th:text="${product.price}"></td>
+    </tr>
+    <tr>
+        <td bgcolor=orange>Fee</td>
+        <td align=left th:text="${product.fee}"></td>
+    </tr>
+
+    <tr>
+        <td bgcolor=orange>Created Date</td>
+        <td align=left th:text="${#dates.format(product.createDate, 'yyyy-MM-dd')}"></td>
+    </tr>
+
+</table>
+
+
+<hr>
+
+
+<a th:href="@{/productList}">글 목록</a>
+</body>
+</html>

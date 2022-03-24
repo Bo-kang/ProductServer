@@ -14,5 +14,6 @@ public interface ProductResponseDTO {
     Double getPrice();
     Double getFee();
     Product.Language getLanguage();
+    ProductInfo.Status getStatus();
     String getContents();
 }

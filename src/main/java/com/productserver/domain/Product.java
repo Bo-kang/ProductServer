@@ -31,7 +31,7 @@ public class Product {
     @Column(nullable = false)
     private String contents;
 
-    @Enumerated(EnumType.STRING) @Column(nullable = false, columnDefinition = "varchar(20) default 'KOR'")
+    @Enumerated(EnumType.STRING) @Column( insertable = false, nullable = false, columnDefinition = "varchar(20) default 'KOR'")
     private Language language;
 
 }
