@@ -52,14 +52,17 @@
 
 </table>
 
-<a th:href="@{/insertProduct}">새글 등록</a>
+<a th:href="@{/insertProduct}">새 작품 등록</a>
 <hr>
 <a th:href="@{/logout}"> LOG OUT </a>
 
 </body>
 <script>
-    function updateStatus(idx) {
+    function reload() {
+        location.reload();
+    }
 
+    function updateStatus(idx) {
         var uri = "/productInfo?productId=" + idx;
         var headers = {"Content-Type": "application/json", "X-HTTP-Method-Override": "PATCH"};
         var params = {"productId" : idx, "productStatus": "WAITING_CONSIDER"};
@@ -70,16 +73,9 @@
             headers :headers,
             dataType: "json",
             data: JSON.stringify(params),
-            success : function () {
-                location.reload();
-            }
-        }).done(function () {
-            location.reload();
-        });
-
+            success : setTimeout(reload, 100)
+        })
     }
-
-
 </script>
 
 </html>

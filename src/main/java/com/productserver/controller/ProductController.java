@@ -85,7 +85,12 @@ public class ProductController {
     }
 
     @PatchMapping("/productInfo")
-    public String patchProductInfo(@RequestParam Long productId, @RequestBody ProductInfo productInfo, Model model){
+    public String patchProductInfo(@ModelAttribute("member") Member member, @RequestParam Long productId, @RequestBody ProductInfo productInfo){
+
+        if(member.getUserType() == Member.UserType.EDITOR){
+            productInfo.setEditor(member);
+        }
+
         productInfoService.updateProductInfo(productInfo);
 
         return "myProductList";

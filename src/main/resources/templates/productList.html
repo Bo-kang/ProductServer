@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
     <meta charset="utf-8">
     <title>Product List</title>
 </head>
@@ -10,23 +11,23 @@
     <form th:action = "productList" th:method="get">
         <select th:name="${lang}">
             <option th:if = "${language} != null" th:value="${language}" th:text = "${language}"></option>
-            <option th:if = "${language} != 'KOR'" th:value="KOR">KOR</option>
-            <option th:if = "${language} != 'ENG'" th:value="ENG">ENG</option>
-            <option th:if = "${language} != 'CHN'" th:value="CHN">CHN</option>
+            <option th:if = "${!#strings.equals(language, 'KOR')}" th:value="KOR">KOR</option>
+            <option th:if = "${!#strings.equals(language, 'ENG')}" th:value="ENG">ENG</option>
+            <option th:if = "${!#strings.equals(language, 'CHN')}" th:value="CHN">CHN</option>
         </select>
 
-        <select th:name="${stat}">
+        <select th:if="${session['member'] != null and #strings.equals(session['member'].userType, 'EDITOR')}" th:name="${stat}">
             <option th:if = "${status} != null" th:value="${status}" th:text = "${status}"></option>
-            <option th:if = "${!status.equals('SELLING')}" th:value="SELLING"> SELLING </option>
-            <option th:if = "${status} != 'WAITING_CONSIDER'" th:value="WAITING_CONSIDER"> WAITING_CONSIDER </option>
-            <option th:if = "${status} != 'UNDER_CONSIDER'" th:value="UNDER_CONSIDER"> UNDER_CONSIDER </option>
+            <option th:if = "${!#strings.equals(status, 'SELLING')}" th:value="SELLING"> SELLING </option>
+            <option th:if = "${!#strings.equals(status, 'WAITING_CONSIDER')}" th:value="WAITING_CONSIDER"> WAITING_CONSIDER </option>
+            <option th:if = "${!#strings.equals(status, 'UNDER_CONSIDER')}" th:value="UNDER_CONSIDER"> UNDER_CONSIDER </option>
         </select>
 
         <input type="submit" value="reload">
     </form>
 </div>
 
-<div th:if="${session['member'] != null }">
+<div th:if="${session['member'] != null and #strings.equals(session['member'].userType, 'WRITER')}">
     <a th:href="@{/myProductList}">My Product List</a>
 </div>
 
@@ -38,6 +39,7 @@
         <th bgcolor="orange" width="100">fee</th>
         <th bgcolor="orange" width="100">writer</th>
         <th bgcolor="orange" width="100">created date</th>
+        <th th:if="${session['member'] != null and #strings.equals(session['member'].userType, 'EDITOR') and #strings.equals(status, 'WAITING_CONSIDER')}"bgcolor="orange" width="100" > charge </th>
     </tr>
     <tr th:each="product : ${productList}">
         <td th:text="${product.productInfoId}">
@@ -46,12 +48,37 @@
         <td th:text="${product.fee}">
         <td th:text="${product.writerId}">
         <td th:text="${#dates.format(product.createDate, 'yyyy-MM-dd')}">
+        <th th:if="${session['member'] != null and #strings.equals(session['member'].userType, 'EDITOR') and #strings.equals(status, 'WAITING_CONSIDER')}"bgcolor="orange" width="100" >
+            <input  value = "담당 설정" type="button" th:attr="onclick=|updateStatus('${product.productInfoId}')|">
+        </th>
     </tr>
 </table>
 
-<a th:href="@{/insertProduct}">새글 등록</a>
+<a th:if="${session['member'] != null and #strings.equals(session['member'].userType, 'WRITER')}" th:href="@{/insertProduct}">새 작품 등록</a>
 <hr>
 <a th:href="@{/logout}"> LOG OUT </a>
 
 </body>
+
+<script>
+    function reload() {
+        location.reload();
+    }
+
+    function updateStatus(idx) {
+        var uri = "/productInfo?productId=" + idx;
+        var headers = {"Content-Type": "application/json", "X-HTTP-Method-Override": "PATCH"};
+        var params = {"productId" : idx, "productStatus": "UNDER_CONSIDER"};
+
+        $.ajax({
+            url: uri,
+            type: "PATCH",
+            headers :headers,
+            dataType: "json",
+            data: JSON.stringify(params),
+            success : setTimeout(reload, 100)
+        })
+    }
+</script>
+
 </html>
