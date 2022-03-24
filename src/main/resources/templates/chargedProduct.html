@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <title>Charged Product View</title>
+</head>
+<body>
+
+<table border='1' th:cellpadding=0 th:cellspacing=0>
+    <tr>
+        <td bgcolor=orange> Owner </td>
+        <td align=left th:text="${chargedProductInfo.productOwner.userId}"></td>
+    </tr>
+
+    <tr>
+        <td bgcolor=orange> Editor </td>
+        <td align=left th:text="${session['member'].userId}"></td>
+    </tr>
+
+    <tr>
+        <td bgcolor=orange>Price</td>
+        <td align=left th:text = "${chargedProductInfo.price}">
+    </tr>
+
+    <tr>
+        <td bgcolor=orange>Fee</td>
+        <td align=left> <input id="fee" name = "fee" type = "number"> </td>
+    </tr>
+</table>
+
+<hr>
+
+<div th:each="product : ${chargedProductInfo.productList}" border = '2' >
+    <table border=1 th:cellpadding=0 th:cellspacing=0>
+        <tr>
+            <td bgcolor=orange> Title</td>
+            <td align=left > <input th:id="'title'+${product.seq}" name = "title" type = "text" th:value="${product.title}"> </td>
+        </tr>
+
+        <tr>
+            <td bgcolor=orange> Contents</td>
+            <td align=left ><textarea th:id="'contents'+${product.seq}" name=contents cols=40 rows=10 th:text="${product.contents}" ></textarea></td>
+        </tr>
+        <tr>
+            <td bgcolor=orange>Language</td>
+            <td th:text="${product.language}"></td>
+        </tr>
+
+    </table>
+    <input value = "Update" type="button" th:attr="onclick=|updateProduct('${product.seq}')|">
+</div>
+<hr>
+
+
+    <div >
+        <table border=1 th:cellpadding=0 th:cellspacing=0>
+            <tr>
+                <td bgcolor=orange> Title</td>
+                <td align=left > <input id = 'insertTitle' name = "title" type = "text" > </td>
+            </tr>
+
+            <tr>
+                <td bgcolor=orange> Contents</td>
+                <td align=left ><textarea id="insertContents" name= 'contents' cols=40 rows=10 ></textarea></td>
+            </tr>
+            <tr>
+                <td bgcolor=orange>Language</td>
+                <td >
+                    <select id="insertLanguage" name = 'language'>
+                        <option value="KOR">KOR</option>
+                        <option value="ENG">ENG</option>
+                        <option value="CHN">CHN</option>
+                    </select>
+                </td>
+            </tr>
+
+        </table>
+        <input value = "Update" type="button" th:attr="onclick=|insertProduct('${chargedProductInfo.productId}')|">
+    </div>
+
+
+<a th:href="@{/chargedProductList}"> 할당 제품 목록</a>
+</body>
+
+
+<script>
+    function reload() {
+        location.reload();
+    }
+
+    function updateProduct(productSeq) {
+        var title = $('#' + "title"+productSeq).val();
+        var contents = $('#' + "contents" + productSeq).val();
+
+        var uri = "/product?productSeq=" + productSeq;
+        var headers = {"Content-Type": "application/json", "X-HTTP-Method-Override": "PATCH"};
+        var params = {"seq" : productSeq, "title": title, "contents" : contents};
+
+
+        $.ajax({
+            url: uri,
+            type: "PATCH",
+            headers :headers,
+            dataType: "json",
+            data: JSON.stringify(params),
+            success : setTimeout(reload, 100)
+        })
+    }
+
+    function insertProduct(productInfoId) {
+        var title = $('#' + "insertTitle").val();
+        var contents = $('#' + "insertContents").val();
+        var language = $('#' + "insertLanguage").val();
+        var uri = "/product";
+        var headers = {"Content-Type": "application/json", "X-HTTP-Method-Override": "PATCH"};
+        var params = {"productInfo" : { "productId" : productInfoId }, "title": title, "contents" : contents, "language" : language};
+
+
+        $.ajax({
+            url: uri,
+            type: "POST",
+            headers :headers,
+            dataType: "json",
+            data: JSON.stringify(params),
+            success : setTimeout(reload, 100)
+        })
+    }
+
+</script>
+
+</html>
+
+

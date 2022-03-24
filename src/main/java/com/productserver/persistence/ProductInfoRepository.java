@@ -14,7 +14,7 @@ import java.util.List;
 public interface ProductInfoRepository extends CrudRepository<ProductInfo, Long> {
     List<ProductInfo> findAllByProductStatus(ProductInfo.Status status);
     List<ProductInfo> findAllByProductOwner(Member member);
-
+    List<ProductInfo> findAllByEditor(Member member);
     @Query(" select a.productId as productInfoId, b.seq as productId, a.productOwner.userId as writerId, a.createDate as createDate, b.title as title, a.price as price, a.fee as fee, b.language as language, a.productStatus as status " +
             "from ProductInfo a, Product b " +
             "where a.productId = b.productInfo.productId and a.productStatus = ?1 and b.language = ?2")

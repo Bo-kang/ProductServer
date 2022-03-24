@@ -8,7 +8,7 @@ import com.productserver.domain.ProductResponseDTO;
 import java.util.List;
 
 public interface ProductInfoService {
-    ProductInfo getProductInfo(ProductInfo productInfo);
+    ProductInfo getProductInfo(Long productInfoId);
 
     ProductInfo registerProductInfo(ProductInfo productInfo);
 
@@ -17,4 +17,6 @@ public interface ProductInfoService {
     void updateProductInfo(ProductInfo productInfo);
 
     List<ProductInfo> getProductListByWriter(Member member);
+
+    List<ProductInfo> getProductListByEditor(Member member);
 }

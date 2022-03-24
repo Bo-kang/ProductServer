@@ -19,8 +19,8 @@ public class ProductInfoServiceImpl implements ProductInfoService {
     private final ProductInfoRepository productInfoRepo;
 
     @Override
-    public ProductInfo getProductInfo(ProductInfo productInfo){
-        Optional<ProductInfo> ret = productInfoRepo.findById(productInfo.getProductId());
+    public ProductInfo getProductInfo(Long productInfoId){
+        Optional<ProductInfo> ret = productInfoRepo.findById(productInfoId);
 
         return ret.orElse(null);
     }
@@ -40,7 +40,7 @@ public class ProductInfoServiceImpl implements ProductInfoService {
     public void updateProductInfo(ProductInfo productInfo) {
         if(productInfo.getProductStatus() != null)
             productInfoRepo.updateStatus(productInfo.getProductStatus(), productInfo.getProductId());
-        if(productInfo.getProductOwner() != null)
+        if(productInfo.getEditor() != null)
             productInfoRepo.updateEditor(productInfo.getEditor(), productInfo.getProductId());
         if( productInfo.getFee() != null && !productInfo.getFee().isNaN())
             productInfoRepo.updateFee(productInfo.getFee(), productInfo.getProductId());
@@ -50,6 +50,11 @@ public class ProductInfoServiceImpl implements ProductInfoService {
     @Transactional
     public List<ProductInfo> getProductListByWriter(Member member) {
         return productInfoRepo.findAllByProductOwner(member);
+    }
+
+    @Override
+    public List<ProductInfo> getProductListByEditor(Member member) {
+        return productInfoRepo.findAllByEditor(member);
     }
 
 }

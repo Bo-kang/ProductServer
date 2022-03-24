@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <title>Product List</title>
+</head>
+<body th:align="center">
+
+
+<table border="1" th:cellpadding=0 th:cellspacing=0 th:marginwidth="0" width="700" th:align="center">
+    <tr>
+        <th  bgcolor="orange" width="100">number</th>
+        <th bgcolor="orange" width="100">title</th>
+        <th  bgcolor="orange" width="100">language</th>
+        <th  bgcolor="orange" width="100">price</th>
+        <th  bgcolor="orange" width="100">fee</th>
+        <th  bgcolor="orange" width="100">editor</th>
+        <th  bgcolor="orange" width="100">status</th>
+        <th  bgcolor="orange" width="100">created date</th>
+        <th  bgcolor="orange" width="100">update date</th>
+        <th  bgcolor="orange" width="100">Edit</th>
+        <th  bgcolor="orange" width="100">Complete Consideration</th>
+    </tr>
+
+
+    <div id="productInfoRow" th:each="productInfo : ${productInfoList}">
+        <form></form>
+        <tr >
+            <td th:id="productId" th:rowspan="${productInfo.productList.size}" th:text="${productInfo.productId}">
+            <td><a th:href="@{/chargedProduct(productId=${productInfo.productList[0].seq})}"
+                   th:text="${productInfo.productList[0].title}"> </a></td>
+            <td th:text="${productInfo.productList[0].language}">
+            <td th:rowspan="${productInfo.productList.size}" th:text="${productInfo.price}">
+            <td th:rowspan="${productInfo.productList.size}" th:text="${productInfo.fee}">
+            <td th:if="${productInfo.editor != null} " th:rowspan="${productInfo.productList.size}"  th:text="${productInfo.editor.userId}">
+            <td th:if="${productInfo.editor == null} " th:rowspan="${productInfo.productList.size}" th:text="${'-'}">
+            <td th:rowspan="${productInfo.productList.size}" th:text="${productInfo.productStatus}">
+            <td th:rowspan="${productInfo.productList.size}" th:text="${#dates.format(productInfo.createDate, 'yyyy-MM-dd')}">
+            <td th:rowspan="${productInfo.productList.size}" th:text="${#dates.format(productInfo.updateDate, 'yyyy-MM-dd')}">
+            <td th:rowspan="${productInfo.productList.size}" > <input value = "edit" type="button"th:onclick="'location.href=\''+ @{chargedProduct(productInfoId=${productInfo.productId})} + '\''" </td>
+            <td th:rowspan="${productInfo.productList.size}" > <input value = "Complete" type="button" th:attr="onclick=|updateStatus('${productInfo.productId}')|"> </td>
+        </tr>
+
+        <tr th:if="${productInfo.productList.size != 1}"  th:each="num : ${#numbers.sequence(1, productInfo.productList.size - 1) }">
+            <td><a th:href="@{/product(productId=${productInfo.productList[num].seq})}"
+                   th:text="${productInfo.productList[num].title}"> </a></td>
+            <td th:text="${productInfo.productList[num].language}">
+        </tr>
+    </div>
+
+
+</table>
+
+<hr>
+<a th:href="@{/logout}"> LOG OUT </a>
+
+</body>
+<script>
+    function reload() {
+        location.reload();
+    }
+
+    function updateStatus(idx) {
+        var uri = "/productInfo?productId=" + idx;
+        var headers = {"Content-Type": "application/json", "X-HTTP-Method-Override": "PATCH"};
+        var params = {"productId" : idx, "productStatus": "SELLING"};
+
+        $.ajax({
+            url: uri,
+            type: "PATCH",
+            headers :headers,
+            dataType: "json",
+            data: JSON.stringify(params),
+            success : setTimeout(reload, 100)
+        })
+    }
+</script>
+
+</html>

@@ -24,5 +24,10 @@ public class ProductServiceImpl implements ProductService {
         return productRepo.findProductDtoByProductSeq(productId).orElse(null);
     }
 
+    @Override
+    public void updateProduct(Product product) {
+        productRepo.updateTitleAndContents(product.getTitle(), product.getContents(), product.getSeq());
+    }
+
 
 }

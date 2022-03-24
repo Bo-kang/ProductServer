@@ -3,6 +3,8 @@ package com.productserver.domain;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.DynamicInsert;
 
 import javax.persistence.*;
 
@@ -10,6 +12,7 @@ import javax.persistence.*;
 @Setter
 @ToString(exclude = {"productInfo"})
 @Entity
+@DynamicInsert
 public class Product {
 
     public enum Language{
@@ -31,7 +34,7 @@ public class Product {
     @Column(nullable = false)
     private String contents;
 
-    @Enumerated(EnumType.STRING) @Column( insertable = false, nullable = false, columnDefinition = "varchar(20) default 'KOR'")
+    @Enumerated(EnumType.STRING) @Column( nullable = false, columnDefinition = "varchar(20) default 'KOR'")
     private Language language;
 
 }

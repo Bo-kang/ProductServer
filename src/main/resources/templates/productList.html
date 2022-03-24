@@ -31,7 +31,11 @@
     <a th:href="@{/myProductList}">My Product List</a>
 </div>
 
-<table boarder="1" cellpadding="0" cellspacing="0" width="700" th:align="center">
+<div th:if="${session['member'] != null and #strings.equals(session['member'].userType, 'EDITOR')}">
+    <a th:href="@{/chargedProductList}">Charged Product List</a>
+</div>
+
+<table border="1" th:cellpadding=0 th:cellspacing=0 th:marginwidth="0" width="700" th:align="center">
     <tr>
         <th bgcolor="orange" width="100">number</th>
         <th bgcolor="orange" width="100">title</th>
@@ -48,13 +52,14 @@
         <td th:text="${product.fee}">
         <td th:text="${product.writerId}">
         <td th:text="${#dates.format(product.createDate, 'yyyy-MM-dd')}">
-        <th th:if="${session['member'] != null and #strings.equals(session['member'].userType, 'EDITOR') and #strings.equals(status, 'WAITING_CONSIDER')}"bgcolor="orange" width="100" >
+        <th th:if="${session['member'] != null and #strings.equals(session['member'].userType, 'EDITOR') and #strings.equals(status, 'WAITING_CONSIDER')}"  >
             <input  value = "담당 설정" type="button" th:attr="onclick=|updateStatus('${product.productInfoId}')|">
         </th>
     </tr>
 </table>
 
 <a th:if="${session['member'] != null and #strings.equals(session['member'].userType, 'WRITER')}" th:href="@{/insertProduct}">새 작품 등록</a>
+
 <hr>
 <a th:href="@{/logout}"> LOG OUT </a>
 
