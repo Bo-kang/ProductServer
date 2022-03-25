@@ -107,6 +107,7 @@ public class ProductController {
     @PatchMapping("/productInfo")
     public String patchProductInfo(@ModelAttribute("member") Member member, @RequestParam Long productId, @RequestBody ProductInfo productInfo){
 
+        System.out.println("\n" + productInfo + "\n");
         if(member.getUserType().equals(Member.UserType.EDITOR)){
             productInfo.setEditor(member);
         }

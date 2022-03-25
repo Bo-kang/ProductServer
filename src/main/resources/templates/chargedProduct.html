@@ -25,9 +25,11 @@
 
     <tr>
         <td bgcolor=orange>Fee</td>
-        <td align=left> <input id="fee" name = "fee" type = "number"> </td>
+        <td align=left> <input th:value = "${chargedProductInfo.fee}" id="fee" name = "fee" type = "number"> </td>
     </tr>
 </table>
+
+<input value = "UpdateFee" type="button" th:attr="onclick=|updateFee('${chargedProductInfo.productId}')|">
 
 <hr>
 
@@ -76,7 +78,7 @@
             </tr>
 
         </table>
-        <input value = "Update" type="button" th:attr="onclick=|insertProduct('${chargedProductInfo.productId}')|">
+        <input value = "Insert" type="button" th:attr="onclick=|insertProduct('${chargedProductInfo.productId}')|">
     </div>
 
 
@@ -87,6 +89,23 @@
 <script>
     function reload() {
         location.reload();
+    }
+
+    function updateFee(productInfoId) {
+        var fee = $('#' + 'fee').val()
+        var uri = "/productInfo?productId=" + productInfoId;
+        var headers = {"Content-Type": "application/json", "X-HTTP-Method-Override": "PATCH"};
+        var params = {"productId" : productInfoId, "fee": fee};
+
+
+        $.ajax({
+            url: uri,
+            type: "PATCH",
+            headers :headers,
+            dataType: "json",
+            data: JSON.stringify(params),
+            success : setTimeout(reload, 100)
+        })
     }
 
     function updateProduct(productSeq) {
