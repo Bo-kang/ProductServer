@@ -56,10 +56,8 @@ public class LoginController {
     }
 
     @GetMapping("/logout")
-    public String logout(HttpSession session) {
-        session.setAttribute("UserType" , null);
-        session.setAttribute("UserId" , null);
-
+    public String logout(SessionStatus sessionStatus) {
+        sessionStatus.setComplete();
         return "OK";
     }
 

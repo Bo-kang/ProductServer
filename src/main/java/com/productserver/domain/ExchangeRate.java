@@ -10,13 +10,9 @@ import java.util.Date;
 @ToString
 @Entity
 public class ExchangeRate {
-    @Id @GeneratedValue
-    private Long seq;
-
-    @Column(nullable = false, columnDefinition = "date default sysdate")
-    private Date standardDate;
-
+    @Id
     @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private Product.Language country;
 
     @Column(nullable = false)
