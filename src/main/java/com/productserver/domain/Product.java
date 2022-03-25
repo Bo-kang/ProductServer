@@ -1,5 +1,6 @@
 package com.productserver.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -26,6 +27,7 @@ public class Product {
     private Long seq;
 
     @ManyToOne @JoinColumn(name = "product_id")
+    @JsonIgnore
     private ProductInfo productInfo;
 
     @Column(nullable = false)

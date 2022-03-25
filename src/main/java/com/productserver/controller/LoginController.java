@@ -1,43 +1,42 @@
 package com.productserver.controller;
 
 import com.productserver.domain.Member;
+import com.productserver.domain.Product;
+import com.productserver.domain.ProductInfo;
 import com.productserver.service.MemberServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
+
+import javax.servlet.http.HttpSession;
 
 /*
 * 실패하는 경우에 대한 예외처리 추가 필요
 * */
 
 
-@Controller
+@RestController
 @RequiredArgsConstructor
-@SessionAttributes(types = Member.class, names = "member")
+@SessionAttributes( names = {"member", "language", "status"})
 public class LoginController {
     private final MemberServiceImpl memberService;
 
-    @GetMapping("/login")
-    public void loginView(){
-
-    }
-    @GetMapping("/register")
-    public void registerView(){
-
-    }
 
     @PostMapping("/login")
-    public String login( Member member, Model model){
+    public String login(@RequestBody Member member, Model model){
+        System.out.println(member);
         Member ret = memberService.loginMember(member);
         if(ret == null){
             // 로그인 실패 오류 처리
             return null;
         }
         else{
-            model.addAttribute("member", ret);
-            System.out.println(ret);
-            return "redirect:productList";
+            model.addAttribute("member" , ret);
+            model.addAttribute("language" , Product.Language.KOR);
+            model.addAttribute("status" , ProductInfo.Status.SELLING);
+            return "OK";
         }
 
     }
@@ -46,9 +45,22 @@ public class LoginController {
     public String registerMember( Member member, Model model){
 
         Member ret = memberService.registerMember(member);
-        model.addAttribute(ret);
-        System.out.println(ret);
+        if(ret == null){
+            // 회원가입 실패 오류 처리
+            return null;
+        }
+        else{
+            return "OK";
+        }
 
-        return "login";
     }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.setAttribute("UserType" , null);
+        session.setAttribute("UserId" , null);
+
+        return "OK";
+    }
+
 }
