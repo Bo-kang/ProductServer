@@ -68,7 +68,8 @@ public class ProductController {
 
         Product product = new Product();
         product.setTitle(productDTO.getTitle());
-        product.setLanguage(productDTO.getLanguage());
+        if(productDTO.getLanguage() == null) product.setLanguage(Product.Language.KOR);
+        else   product.setLanguage(productDTO.getLanguage());
         product.setContents(productDTO.getContents());
         product.setProductInfo(productInfo);
 
