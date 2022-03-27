@@ -1,0 +1,991 @@
+2022-03-22 16:10:16 jdbc[34]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-210]
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:190)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:132)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:807)
+	at org.h2.server.web.WebApp.login(WebApp.java:1033)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:153)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:697)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 13 more
+2022-03-22 16:11:25 jdbc[34]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table [*]user (id bigint not null, user_id varchar(255), user_password varchar(255), user_type varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table user (id bigint not null, user_id varchar(255), user_password varchar(255), user_type varchar(255), primary key (id)) [42001-210]
+2022-03-22 16:12:46 jdbc[34]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table [*]user (seq bigint not null, user_id varchar(255), user_password varchar(255), user_type varchar(255), primary key (seq))"; expected "identifier"; SQL statement:
+create table user (seq bigint not null, user_id varchar(255), user_password varchar(255), user_type varchar(255), primary key (seq)) [42001-210]
+2022-03-22 16:58:21 jdbc[126]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:85)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:133)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:807)
+	at org.h2.server.web.WebApp.login(WebApp.java:1033)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:153)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-210]
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:190)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:132)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:807)
+	at org.h2.server.web.WebApp.login(WebApp.java:1033)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:153)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:697)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 13 more
+2022-03-22 20:30:21 jdbc[227]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PRODUCTINFO" not found; SQL statement:
+SELECT * FROM productinfo [42102-210]
+2022-03-23 14:05:22 jdbc[1005]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:85)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:133)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:807)
+	at org.h2.server.web.WebApp.login(WebApp.java:1033)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:153)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-210]
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:190)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:132)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:807)
+	at org.h2.server.web.WebApp.login(WebApp.java:1033)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:153)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:697)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 13 more
+2022-03-23 14:05:22 jdbc[1005]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:85)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:133)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:807)
+	at org.h2.server.web.WebApp.login(WebApp.java:1033)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:153)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-210]
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:190)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:132)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:807)
+	at org.h2.server.web.WebApp.login(WebApp.java:1033)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:153)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:697)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 13 more
+2022-03-23 17:43:57 jdbc[1207]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:85)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:133)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:807)
+	at org.h2.server.web.WebApp.login(WebApp.java:1033)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:153)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-210]
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:190)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:132)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:807)
+	at org.h2.server.web.WebApp.login(WebApp.java:1033)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:153)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:697)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 13 more
+2022-03-24 08:07:26 jdbc[1898]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:85)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:133)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:807)
+	at org.h2.server.web.WebApp.login(WebApp.java:1033)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:153)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-210]
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:190)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:132)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:807)
+	at org.h2.server.web.WebApp.login(WebApp.java:1033)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:153)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:697)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 13 more
+2022-03-24 08:08:49 jdbc[1898]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "SELLING" not found; SQL statement:
+update product_info set product_status = "SELLING" [42122-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.command.dml.SetClauseList$SetSimple.mapAndOptimize(SetClauseList.java:316)
+	at org.h2.command.dml.SetClauseList.mapAndOptimize(SetClauseList.java:210)
+	at org.h2.command.dml.Update.prepare(Update.java:148)
+	at org.h2.command.Parser.prepareCommand(Parser.java:557)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:615)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:553)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-03-24 10:13:31 jdbc[2430]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:85)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:133)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:807)
+	at org.h2.server.web.WebApp.login(WebApp.java:1033)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:153)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-210]
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:190)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:132)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:807)
+	at org.h2.server.web.WebApp.login(WebApp.java:1033)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:153)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:697)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 13 more
+2022-03-24 10:13:31 jdbc[2430]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:85)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:133)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:807)
+	at org.h2.server.web.WebApp.login(WebApp.java:1033)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:153)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-210]
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:190)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:132)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:807)
+	at org.h2.server.web.WebApp.login(WebApp.java:1033)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:153)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:697)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 13 more
+2022-03-24 16:11:59 jdbc[3121]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:85)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:133)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:807)
+	at org.h2.server.web.WebApp.login(WebApp.java:1033)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:153)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-210]
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:190)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:132)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:807)
+	at org.h2.server.web.WebApp.login(WebApp.java:1033)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:153)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:697)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 13 more
+2022-03-24 17:26:47 jdbc[3572]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:85)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:133)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:807)
+	at org.h2.server.web.WebApp.login(WebApp.java:1033)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:153)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-210]
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:190)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:132)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:807)
+	at org.h2.server.web.WebApp.login(WebApp.java:1033)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:153)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:697)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 13 more
+2022-03-25 16:59:18 jdbc[4053]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:85)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:133)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:807)
+	at org.h2.server.web.WebApp.login(WebApp.java:1033)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:153)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-210]
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:190)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:132)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:807)
+	at org.h2.server.web.WebApp.login(WebApp.java:1033)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:153)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:697)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 13 more
+2022-03-25 16:59:18 jdbc[4053]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:85)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:133)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:807)
+	at org.h2.server.web.WebApp.login(WebApp.java:1033)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:153)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-210]
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:190)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:132)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:807)
+	at org.h2.server.web.WebApp.login(WebApp.java:1033)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:153)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:697)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 13 more
+2022-03-25 16:59:25 jdbc[4053]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "USERID" not found; SQL statement:
+SELECT userId as username, userType as role, concat( '{noop}', userPassword) as password FROM member WHERE userId = 'editor1' [42122-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.Alias.optimize(Alias.java:52)
+	at org.h2.command.query.Select.prepare(Select.java:1177)
+	at org.h2.command.Parser.prepareCommand(Parser.java:557)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:615)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:553)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-03-25 16:59:39 jdbc[4053]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "USERID" not found; SQL statement:
+SELECT userId as username, userType as role FROM member WHERE userId = 'editor1' [42122-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.Alias.optimize(Alias.java:52)
+	at org.h2.command.query.Select.prepare(Select.java:1177)
+	at org.h2.command.Parser.prepareCommand(Parser.java:557)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:615)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:553)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-03-25 16:59:46 jdbc[4053]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "USERID" not found; SQL statement:
+SELECT userId as username, userType as role FROM member WHERE userId = 'editor1' [42122-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.Alias.optimize(Alias.java:52)
+	at org.h2.command.query.Select.prepare(Select.java:1177)
+	at org.h2.command.Parser.prepareCommand(Parser.java:557)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:615)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:553)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-03-25 17:03:22 jdbc[4053]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT user_id as username, user_type as role, [*], true enabled FROM member WHERE user_id = 'editor'"; expected "*, INTERSECTS, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+SELECT user_id as username, user_type as role, , true enabled FROM member WHERE user_id = 'editor' [42001-210]
+2022-03-25 18:29:31 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+insert into exchange_rate values( 'ENG', 0.00082, sysdate ) [21002-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.command.dml.Insert.prepare(Insert.java:295)
+	at org.h2.command.Parser.prepareCommand(Parser.java:557)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:615)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:553)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-03-25 18:29:44 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'ENG' (EXCHANGE_RATE: ""COUNTRY"" INTEGER NOT NULL)"; SQL statement:
+insert into exchange_rate values( 0,'ENG', 0.00082, sysdate ) [22018-210]
+2022-03-25 18:29:48 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+insert into exchange_rate values( 'ENG', 0.00082, sysdate() ) [21002-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.command.dml.Insert.prepare(Insert.java:295)
+	at org.h2.command.Parser.prepareCommand(Parser.java:557)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:615)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:553)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-03-25 18:29:50 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'ENG' (EXCHANGE_RATE: ""COUNTRY"" INTEGER NOT NULL)"; SQL statement:
+insert into exchange_rate values( 1,'ENG', 0.00082, sysdate() ) [22018-210]
+2022-03-25 18:30:03 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'ENG' (EXCHANGE_RATE: ""COUNTRY"" INTEGER NOT NULL)"; SQL statement:
+insert into exchange_rate values( 1,'ENG', 0.00082, sysdate() ) [22018-210]
+2022-03-25 18:30:12 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+insert into exchange_rate values( 'ENG', 0.00082, sysdate() ) [21002-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.command.dml.Insert.prepare(Insert.java:295)
+	at org.h2.command.Parser.prepareCommand(Parser.java:557)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:615)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:553)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-03-25 18:30:20 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+insert into exchange_rate values( 'ENG', 0.00082, curdate() ) [21002-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.command.dml.Insert.prepare(Insert.java:295)
+	at org.h2.command.Parser.prepareCommand(Parser.java:557)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:615)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:553)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-03-25 18:30:23 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+insert into exchange_rate values( 'ENG', 0.00082, current_date() ) [21002-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.command.dml.Insert.prepare(Insert.java:295)
+	at org.h2.command.Parser.prepareCommand(Parser.java:557)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:615)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:553)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-03-25 18:30:27 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+insert into exchange_rate values( 'ENG', 0.00082, current_date ) [21002-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.command.dml.Insert.prepare(Insert.java:295)
+	at org.h2.command.Parser.prepareCommand(Parser.java:557)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:615)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:553)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-03-25 18:30:37 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+insert into exchange_rate values( 'ENG', 0.00082, "2022-03-25") [21002-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.command.dml.Insert.prepare(Insert.java:295)
+	at org.h2.command.Parser.prepareCommand(Parser.java:557)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:615)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:553)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-03-25 18:30:48 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "2022-03-25" not found; SQL statement:
+insert into exchange_rate values( 0, 'ENG', 0.00082, "2022-03-25") [42122-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.command.dml.Insert.prepare(Insert.java:300)
+	at org.h2.command.Parser.prepareCommand(Parser.java:557)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:615)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:553)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-03-25 18:30:50 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "2022-03-25" not found; SQL statement:
+insert into exchange_rate values( 1, 'ENG', 0.00082, "2022-03-25") [42122-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.command.dml.Insert.prepare(Insert.java:300)
+	at org.h2.command.Parser.prepareCommand(Parser.java:557)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:615)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:553)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-03-25 18:31:01 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'ENG' (EXCHANGE_RATE: ""COUNTRY"" INTEGER NOT NULL)"; SQL statement:
+insert into exchange_rate values( 1, 'ENG', 0.00082, current_date) [22018-210]
+2022-03-25 18:31:02 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'ENG' (EXCHANGE_RATE: ""COUNTRY"" INTEGER NOT NULL)"; SQL statement:
+insert into exchange_rate values( 1, 'ENG', 0.00082, current_date()) [22018-210]
+2022-03-25 18:31:05 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'ENG' (EXCHANGE_RATE: ""COUNTRY"" INTEGER NOT NULL)"; SQL statement:
+insert into exchange_rate values( 1, 'ENG', 0.00082, sysdate) [22018-210]
+2022-03-25 18:31:07 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'ENG' (EXCHANGE_RATE: ""COUNTRY"" INTEGER NOT NULL)"; SQL statement:
+insert into exchange_rate values( 1, 'ENG', 0.00082, sysdate()) [22018-210]
+2022-03-25 18:31:45 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Function "STR_TO_DATE" not found; SQL statement:
+insert into exchange_rate values( 1, 'ENG', 0.00082,STR_TO_DATE ('2022-03-25 12:00:00','%Y-%m-%d %h:%i:%s') [90022-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:651)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.command.Parser.readFunction(Parser.java:3877)
+	at org.h2.command.Parser.readTerm(Parser.java:5199)
+	at org.h2.command.Parser.readFactor(Parser.java:3423)
+	at org.h2.command.Parser.readSum(Parser.java:3410)
+	at org.h2.command.Parser.readConcat(Parser.java:3375)
+	at org.h2.command.Parser.readCondition(Parser.java:3160)
+	at org.h2.command.Parser.readExpression(Parser.java:3076)
+	at org.h2.command.Parser.readExpressionOrDefault(Parser.java:3062)
+	at org.h2.command.Parser.parseValuesForCommand(Parser.java:1783)
+	at org.h2.command.Parser.parseInsert(Parser.java:1654)
+	at org.h2.command.Parser.parsePrepared(Parser.java:797)
+	at org.h2.command.Parser.parse(Parser.java:674)
+	at org.h2.command.Parser.parse(Parser.java:644)
+	at org.h2.command.Parser.prepareCommand(Parser.java:551)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:615)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:553)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-03-25 18:31:47 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Function "STR_TO_DATE" not found; SQL statement:
+insert into exchange_rate values( 1, 'ENG', 0.00082,STR_TO_DATE ('2022-03-25 12:00:00','%Y-%m-%d %h:%i:%s') [90022-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:651)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.command.Parser.readFunction(Parser.java:3877)
+	at org.h2.command.Parser.readTerm(Parser.java:5199)
+	at org.h2.command.Parser.readFactor(Parser.java:3423)
+	at org.h2.command.Parser.readSum(Parser.java:3410)
+	at org.h2.command.Parser.readConcat(Parser.java:3375)
+	at org.h2.command.Parser.readCondition(Parser.java:3160)
+	at org.h2.command.Parser.readExpression(Parser.java:3076)
+	at org.h2.command.Parser.readExpressionOrDefault(Parser.java:3062)
+	at org.h2.command.Parser.parseValuesForCommand(Parser.java:1783)
+	at org.h2.command.Parser.parseInsert(Parser.java:1654)
+	at org.h2.command.Parser.parsePrepared(Parser.java:797)
+	at org.h2.command.Parser.parse(Parser.java:674)
+	at org.h2.command.Parser.parse(Parser.java:644)
+	at org.h2.command.Parser.prepareCommand(Parser.java:551)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:615)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:553)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-03-25 18:31:54 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Function "STR_TO_DATE" not found; SQL statement:
+insert into exchange_rate values( 1, 'ENG', 0.00082, STR_TO_DATE ('2022-03-25 12:00:00','%Y-%m-%d %h:%i:%s')) [90022-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:651)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.command.Parser.readFunction(Parser.java:3877)
+	at org.h2.command.Parser.readTerm(Parser.java:5199)
+	at org.h2.command.Parser.readFactor(Parser.java:3423)
+	at org.h2.command.Parser.readSum(Parser.java:3410)
+	at org.h2.command.Parser.readConcat(Parser.java:3375)
+	at org.h2.command.Parser.readCondition(Parser.java:3160)
+	at org.h2.command.Parser.readExpression(Parser.java:3076)
+	at org.h2.command.Parser.readExpressionOrDefault(Parser.java:3062)
+	at org.h2.command.Parser.parseValuesForCommand(Parser.java:1783)
+	at org.h2.command.Parser.parseInsert(Parser.java:1654)
+	at org.h2.command.Parser.parsePrepared(Parser.java:797)
+	at org.h2.command.Parser.parse(Parser.java:674)
+	at org.h2.command.Parser.parse(Parser.java:644)
+	at org.h2.command.Parser.prepareCommand(Parser.java:551)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:615)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:553)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-03-25 18:32:13 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Function "SYSDATETIME" not found; SQL statement:
+insert into exchange_rate values( 1, 'ENG', 0.00082, sysdatetime()) [90022-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:651)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.command.Parser.readFunction(Parser.java:3877)
+	at org.h2.command.Parser.readTerm(Parser.java:5199)
+	at org.h2.command.Parser.readFactor(Parser.java:3423)
+	at org.h2.command.Parser.readSum(Parser.java:3410)
+	at org.h2.command.Parser.readConcat(Parser.java:3375)
+	at org.h2.command.Parser.readCondition(Parser.java:3160)
+	at org.h2.command.Parser.readExpression(Parser.java:3076)
+	at org.h2.command.Parser.readExpressionOrDefault(Parser.java:3062)
+	at org.h2.command.Parser.parseValuesForCommand(Parser.java:1783)
+	at org.h2.command.Parser.parseInsert(Parser.java:1654)
+	at org.h2.command.Parser.parsePrepared(Parser.java:797)
+	at org.h2.command.Parser.parse(Parser.java:674)
+	at org.h2.command.Parser.parse(Parser.java:644)
+	at org.h2.command.Parser.prepareCommand(Parser.java:551)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:615)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:553)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-03-25 18:32:19 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'ENG' (EXCHANGE_RATE: ""COUNTRY"" INTEGER NOT NULL)"; SQL statement:
+insert into exchange_rate values( 1, 'ENG', 0.00082, sysdate) [22018-210]
+2022-03-25 18:38:49 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "drop table exchange_rate \000d\000a[*]select * from EXCHANGE_RATE"; SQL statement:
+drop table exchange_rate 
+select * from EXCHANGE_RATE [42000-210]
+2022-03-25 18:38:49 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into exchange_rate values( 1, 'ENG', 0.00082, sysdate [*]COUNTRY COUNTRY )"; expected "(, ., [, ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+insert into exchange_rate values( 1, 'ENG', 0.00082, sysdate COUNTRY COUNTRY ) [42001-210]
+2022-03-25 18:38:50 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "EXCHANGE_RATE" not found; SQL statement:
+select * from EXCHANGE_RATE [42102-210]
+2022-03-25 18:38:50 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "EXCHANGE_RATE" not found; SQL statement:
+insert into exchange_rate values( 1, 'ENG', 0.00082, sysdate COUNTRY COUNTRY ) [42102-210]
+2022-03-25 18:38:53 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "EXCHANGE_RATE" not found; SQL statement:
+drop table exchange_rate [42102-210]
+2022-03-25 18:38:53 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into exchange_rate values( 1, 'ENG', 0.00082, sysdate [*]COUNTRY COUNTRY )"; expected "(, ., [, ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+insert into exchange_rate values( 1, 'ENG', 0.00082, sysdate COUNTRY COUNTRY ) [42001-210]
+2022-03-25 18:39:05 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into exchange_rate values( 1, 'ENG', 0.00082, sysdate [*]COUNTRY COUNTRY )"; expected "(, ., [, ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+insert into exchange_rate values( 1, 'ENG', 0.00082, sysdate COUNTRY COUNTRY ) [42001-210]
+2022-03-25 18:39:09 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLDataException: Cannot parse "DATE" constant "ENG"; SQL statement:
+insert into exchange_rate values( 1, 'ENG', 0.00082, sysdate) [22007-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:525)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:216)
+	at org.h2.value.ValueDate.parse(ValueDate.java:53)
+	at org.h2.value.Value.convertToDate(Value.java:1854)
+	at org.h2.value.Value.convertTo(Value.java:1147)
+	at org.h2.value.Value.convertForAssignTo(Value.java:1092)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:369)
+	at org.h2.table.Table.convertInsertRow(Table.java:931)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:167)
+	at org.h2.command.dml.Insert.update(Insert.java:135)
+	at org.h2.command.dml.DataChangeStatement.update(DataChangeStatement.java:61)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:174)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.IllegalArgumentException: ENG
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:187)
+	at org.h2.value.ValueDate.parse(ValueDate.java:51)
+	... 19 more
+2022-03-25 18:39:16 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+insert into exchange_rate values( 1, 'ENG', 0.00082, sysdate, current_date) [21002-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.command.dml.Insert.prepare(Insert.java:295)
+	at org.h2.command.Parser.prepareCommand(Parser.java:557)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:615)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:553)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-03-25 18:39:20 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+insert into exchange_rate values( 1, 'ENG', 0.00082, sysdate, current_date()) [21002-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.message.DbException.get(DbException.java:192)
+	at org.h2.command.dml.Insert.prepare(Insert.java:295)
+	at org.h2.command.Parser.prepareCommand(Parser.java:557)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:615)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:553)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-03-25 18:41:42 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PRODUCTINFO" not found; SQL statement:
+select a.productId as productInfoId, b.seq as productId, a.productOwner.userId as writerId, a.createDate as createDate, b.title as title, a.price as price, a.fee as fee, b.language as language, a.productStatus as status 
+            from ProductInfo a, Product b, ExchangeRate c
+            where a.productId = b.productInfo.productId and a.productStatus = ?1 and b.language = ?2 and c.country = b.language [42102-210]
+2022-03-25 18:44:39 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "EXCHANGERATE" not found; SQL statement:
+SELECT * FROM exchangeRate as e where group by country order by standard_date [42102-210]
+2022-03-25 18:44:44 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "EXCHANGE_ㄱATE" not found; SQL statement:
+SELECT * FROM exchange_ㄱate as e where group by country order by standard_date [42102-210]
+2022-03-25 18:44:45 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM exchange_rate as e where [*]group by country order by standard_date"; expected "INTERSECTS, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+SELECT * FROM exchange_rate as e where group by country order by standard_date [42001-210]
+2022-03-25 18:45:46 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT country, per1krw  FROM exchange_rate as e where [*]group by country order by standard_date"; expected "INTERSECTS, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+SELECT country, per1krw  FROM exchange_rate as e where group by country order by standard_date [42001-210]
+2022-03-25 18:45:53 jdbc[4594]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]as e where group by country order by standard_date"; SQL statement:
+as e where group by country order by standard_date [42000-210]
+2022-03-25 19:12:31 jdbc[4605]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "drop [*]EXCHANGE_RATE"; expected "TABLE, INDEX, USER, SEQUENCE, CONSTANT, TRIGGER, VIEW, ROLE, ALIAS, SCHEMA, ALL, DOMAIN, TYPE, DATATYPE, AGGREGATE, SYNONYM"; SQL statement:
+drop EXCHANGE_RATE [42001-210]
+2022-03-25 19:13:38 jdbc[4605]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "CHN" not found; SQL statement:
+insert into exchange_rate values( "CHN", 0.0052) [42122-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.command.dml.Insert.prepare(Insert.java:300)
+	at org.h2.command.Parser.prepareCommand(Parser.java:557)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:615)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:553)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-03-25 19:13:38 jdbc[4605]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "ENG" not found; SQL statement:
+insert into exchange_rate values( "ENG", 0.00082) [42122-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:521)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:227)
+	at org.h2.message.DbException.get(DbException.java:203)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:248)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:230)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.command.dml.Insert.prepare(Insert.java:300)
+	at org.h2.command.Parser.prepareCommand(Parser.java:557)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:615)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:553)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-03-25 19:25:54 jdbc[4605]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "select * from product_info\000d\000a[*]select * from product"; SQL statement:
+select * from product_info
+select * from product [42000-210]
