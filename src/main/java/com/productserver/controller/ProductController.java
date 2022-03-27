@@ -52,10 +52,6 @@ public class ProductController {
         return ret;
     }
 
-    @GetMapping("/productInfo")
-    @Transactional
-    public ProductInfo getProductInfo(@RequestParam Long productInfoId){
-        return productInfoService.getProductInfo(productInfoId);
-    }
+
 
 }

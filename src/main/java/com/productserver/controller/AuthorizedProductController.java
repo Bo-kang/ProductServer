@@ -7,6 +7,7 @@ import com.productserver.domain.ProductRequestDTO;
 import com.productserver.service.ProductInfoService;
 import com.productserver.service.ProductService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,6 +24,11 @@ public class AuthorizedProductController {
     final private ProductInfoService productInfoService;
     final private ProductService productService;
 
+    @GetMapping("/productInfo")
+    @Transactional
+    public ProductInfo getProductInfo(@RequestParam Long productInfoId){
+        return productInfoService.getProductInfo(productInfoId);
+    }
 
     @GetMapping("/productList")
     public List<ProductInfo> getProductInfoList(@ModelAttribute("member") Member member ){
